@@ -28,4 +28,4 @@ $(document).ready(function() {
 ---
 
 # Example
-* For an example click [here](example.html).
+* For an example click [here](http://dl.usebar.org/custom_checkbox/).
