@@ -1,3 +1,4 @@
+(function($) {
 $.fn.styleCheckbox = function() {
   var $wrapper = $(this),
     $el = $wrapper.find('input.styled_checkbox');
@@ -14,3 +15,4 @@ $.fn.styleCheckbox = function() {
     }
   });
 }
+})(jQuery);
