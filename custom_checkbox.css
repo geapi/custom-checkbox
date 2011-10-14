@@ -1,0 +1,18 @@
+.styled_checkbox_wrap {
+  position   : relative;
+  float      : left;
+  background : url("/images/css/custom_check_box.gif") no-repeat top left;
+  width      : 13px;
+  height     : 13px;
+  margin     : 3px;
+  cursor     : pointer;
+}
+.styled_checkbox_wrap input {
+	opacity: 0;
+	cursor: pointer;
+	filter: alpha(opacity=0.0);
+	outline: 0;
+}
+.wrap_checked {
+  background-position : 0px -13px;
+}

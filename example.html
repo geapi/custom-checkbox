@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Custom Checkbox Example</title>
+	<meta name="author" content="Georg Apitz">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<!-- Date: 2011-10-13 -->
+	<style>
+	.styled_checkbox_wrap {
+	  position   : relative;
+	  float      : left;
+	  background : url("./checkbox.gif") no-repeat top left;
+	  width      : 13px;
+	  height     : 13px;
+	  margin     : 3px;
+	  cursor     : pointer;
+	}
+	.styled_checkbox_wrap input {
+		opacity: 0;
+		cursor: pointer;
+		filter: alpha(opacity=0.0);
+		outline: 0;
+	}
+	.wrap_checked {
+	  background-position : 0px -13px;
+	}
+	input, label{
+		cursor: pointer;
+		display: inline;
+		padding: 3px;
+	}
+	body{
+		padding: 20px;
+	}
+	</style>
+	<script type="text/javascript">
+	$.fn.styleCheckbox = function() {
+	  var $wrapper = $(this),
+	    $el = $wrapper.find('input.styled_checkbox');
+
+	  $el.live('click', function(e) {
+	    var $currentCheckbox = $(e.currentTarget);
+	    if ($currentCheckbox.attr("disabled", false)) {
+	      var $currentWrapper = $currentCheckbox.parents('.styled_checkbox_wrap');
+	      if ($currentCheckbox.is(':checked')) {
+	        $currentWrapper.addClass('wrap_checked');
+	      } else {
+	        $currentWrapper.removeClass('wrap_checked');
+	      }
+	    }
+	  });
+	}
+	$(document).ready(function() {
+			$('.styled_checkbox_wrap').styleCheckbox();
+	});
+	</script>
+</head>
+<body>
+	<h2>Custom checkbox</h2>
+	<p>Look at the readme and source to see how it works,<br/>
+	the styles and javascript for the example are inlined.</p>
+	<div class="styled_checkbox_wrap">
+		<input type="checkbox" name="test" value="1" id="test_1" class="styled_checkbox"/>
+	</div>
+	<label for="test_1">check me</label>
+</body>
+</html>
