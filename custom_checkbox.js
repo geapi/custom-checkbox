@@ -5,7 +5,7 @@
 
     $el.live('click', function(e) {
       var $currentCheckbox = $(e.currentTarget);
-      if ($currentCheckbox.attr("disabled", false)) {
+      if (!$currentCheckbox.attr("disabled") {
         var $currentWrapper = $currentCheckbox.parents('.styled_checkbox_wrap');
         if ($currentCheckbox.is(':checked')) {
           $currentWrapper.addClass('wrap_checked');
